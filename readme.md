@@ -1,9 +1,9 @@
 # Sections of this readme
 
-* [Bitpix](#Bitpix), the Python module for bitmap graphics (from old games, for example).
+* [Bitpix](#bitpix), the Python module for bitmap graphics (from old games, for example).
 * [bpconfig](#bpconfig), a save-load configuration module for it.
-* [Bitpictures](#Bitpictures), the front-end to convert a rom to an image. If you're not going to be doing any coding, use this!
-* [Talk to me!](#Talk to me!) Contact and such.
+* [Bitpictures](#bitpictures), the front-end to convert a rom to an image. If you're not going to be doing any coding, use this!
+* [Talk to me!](#talk-to-me) Contact and such.
 
 All of these require [Python 2](https://www.python.org/downloads/), so make sure you've got it installed.
 
@@ -181,7 +181,7 @@ Usage example:
 #### Getting a property
 It's easy! Just call `.config(propertyName)` on your `Bitmap` with a single property name as the sole parameter, and you'll get that property.
 
-If you want to get the **entire dictionary**, use [`Bitmap.configDict`](#`Bitmap.configDict`).
+If you want to get the **entire dictionary**, use [`Bitmap.configDict`](#bitmapconfigdict).
 
 Usage example:
 
@@ -252,7 +252,7 @@ bpconfig (.py) is the config utility bundled with Bitpix. With it, you can get c
 Here are the functions you will be using:
 
 ### `bpconfig.getConfig(path)`
-Get the configuration saved in the file at `path`. The syntax  for this kind of file can be found [later in this readme](#Config file syntax).
+Get the configuration saved in the file at `path`. The syntax  for this kind of file can be found [later in this readme](#config-file-syntax).
 
 Usage example:
 
@@ -308,7 +308,7 @@ Usage example:
 ```
 
 ### `- Pixel format -`
-Just a single line, containing a string of characters and numbers where each character is a pixel's pixel ID and each number is its bit significance in base 10. What does this mean, you ask? Read [the `pixelFormat` section of the Bitpix part of this readme](`Bitmap.configDict["pixelFormat"]`). It has to do with the order in which bits are stored for each pixel.
+Just a single line, containing a string of characters and numbers where each character is a pixel's pixel ID and each number is its bit significance in base 10. What does this mean, you ask? Read [the `pixelFormat` section of the Bitpix part of this readme](#bitmapconfigdictpixelformat). It has to do with the order in which bits are stored for each pixel.
 
 Usage example:
 
@@ -323,7 +323,7 @@ Tiles are separated by empty lines, and each line in a normal tile represents a 
 
 The other type of tile is the arbitrary tiling (which only works as the last tile level), which is in the format along the lines of `x2` or `y7`. The letter - x or y - means in which direction to tile: on the X-axis or Y-axis, left to right or top to bottom, respectively. The number means what width / height to use. This type of tile is useful as the last level when you work with an uncertain number of tiles / sprites / what your top-level tile might be.
 
-More info on how this works  [in the Bitpix section of this readme](#`Bitmap.configDict["tileLevels"]`).
+More info on how this works  [in the Bitpix section of this readme](#bitmapconfigdicttilelevels).
 
 Usage example:
 
@@ -405,7 +405,7 @@ bitpictures.py mygame.gbc myimage.png myconfig.cfg
 
 Bitpictures will then read `mygame.gbc` (can of course have any extension) and save the image representing it to `myimage.png`.
 
-The third parameter, the config file, is a file containing info about your rom and the image you want. The syntax for a file like this is outlined in the section [Config file syntax](#Config file syntax). The config parameter defaults to `config.cfg`, so if that's what your config is named you can omit that parameter entirely.
+The third parameter, the config file, is a file containing info about your rom and the image you want. The syntax for a file like this is outlined in the section *[Config file syntax](#config-file-syntax)*. The config parameter defaults to `config.cfg`, so if that's what your config is named you can omit that parameter entirely.
 
 Note that saving an entire rom to an image *will take a while*: don't fret if it takes more than a minute - it probably hasn't frozen.
 
