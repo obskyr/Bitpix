@@ -407,6 +407,12 @@ Bitpictures will then read `mygame.gbc` (can of course have any extension) and s
 
 The third parameter, the config file, is a file containing info about your rom and the image you want. The syntax for a file like this is outlined in the section *[Config file syntax](#config-file-syntax)*. The config parameter defaults to `config.cfg`, so if that's what your config is named you can omit that parameter entirely.
 
+The color format Bitpictures takes in the config can be either:
+* A 6-digit RGB hex color code starting with `#`, such as `#BADA55` or `#dc9dff`.
+* An 8-digit  RGBA hex color code starting with `#`, where the last two digits are opacity, such as `#BEEFCAFE` or `#ffc49d80`.
+* A 3-entry comma-separated list of decimal RGB channel values, such as `130, 167, 128`.
+* A 4-entry comma-separated list of decimal RGBA channel values, where the last entry is opacity, such as `159, 255, 157, 40`.
+
 Note that saving an entire rom to an image *will take a while*: don't fret if it takes more than a minute - it probably hasn't frozen.
 
 # Talk to me!

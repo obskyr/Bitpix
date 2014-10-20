@@ -7,3 +7,6 @@
 
 *.bmp
 *.png
+
+# Default config, used for testing
+config.cfg
