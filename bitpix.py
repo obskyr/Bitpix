@@ -6,6 +6,12 @@ from io import BytesIO # For iterating through bytes in a string quickly
 from bitstring import BitArray # For getting the bits of bytes... as bytes.
 from copy import deepcopy # For copying matrixes without modification.
 
+# Okay, so at the moment, every single function relating to Bitmap is in Bitmap.
+# Should the functional ones (the ones which are for returning a value only) be
+# outside of Bitmap, perhaps? And just leave the ones that change the state of
+# Bitmap in? If you have an opinion on the subject, I'd love to hear it at
+# @obskyr on Twitter or just in the Github repository.
+
 class Bitmap(object):
     def __init__(self, infile, config):
         self.configDict = config
@@ -186,9 +192,3 @@ class Bitmap(object):
     paletteIndexMatrix = []
     size = ()
     colorMatrix = []
-
-if __name__ == '__main__':
-    import bpconfig
-    import bpdebug
-    panda = Bitmap('pandablush-incomplete.gbc', bpconfig.getConfig('config.cfg'))
-    print panda.colorMatrix

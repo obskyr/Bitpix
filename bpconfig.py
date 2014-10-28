@@ -3,8 +3,6 @@ import re # For parsing EVERYthing.
 
 # These first functions are ones getConfig uses.
 
-
-
 def stripSection(section):
     """Strip a config file section from all comments and surrounding whitespace."""
     commentRe = re.compile(r"^(.*?)[ \t]*?//.*$", re.MULTILINE)
